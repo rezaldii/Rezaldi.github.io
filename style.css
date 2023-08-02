@@ -1,7 +1,10 @@
-/* CSS Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -9,7 +12,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background: linear-gradient(90deg, #333, #444);
   color: #fff;
   padding: 1rem;
   text-align: center;
@@ -21,7 +24,7 @@ header {
   width: 150px;
   height: 150px;
   margin: 0 auto 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header img {
@@ -40,10 +43,11 @@ nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav li {
-  display: inline-block;
   margin-right: 1rem;
 }
 
@@ -62,6 +66,8 @@ main {
 
 section {
   margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
 }
 
 section h2 {
@@ -76,14 +82,6 @@ section p {
   line-height: 1.8;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-
-/* Additional CSS Styles for screenshots */
 .screenshots {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -96,11 +94,14 @@ footer {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Add some spacing for the links and buttons */
-a,
-button {
+.screenshots img:hover {
+  transform: scale(1.05);
+}
+
+a, button {
   margin-top: 5px;
   padding: 8px 12px;
   background-color: #333;
@@ -109,10 +110,48 @@ button {
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-a:hover,
-button:hover {
+a:hover, button:hover {
   background-color: #555;
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .screenshots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .screenshots {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.certificate-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.certificate-images img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.certificate-images img:hover {
+  transform: scale(1.05);
 }
